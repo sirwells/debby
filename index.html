@@ -219,7 +219,7 @@
       laughter and beautiful memories today and forever ❤️✨
     </div>
 
-    <button class="btn" onclick="playMusic()">
+    <button class="playBtn" onclick="playMusic()">
       🎵 Play Music
     </button>
 
@@ -231,14 +231,19 @@
 
   <!-- MUSIC -->
 
-  <audio id="music" loop>
-    <source src="c:\Users\user\Downloads\JJ-Heller-Happy-Birthday-Song-(CeeNaija.com).mp3" type="audio/mp3">
+  <audio id="bgmusic" loop>
+    <source src="c:\Users\user\Downloads\JJ-Heller-Happy-Birthday-Song-(CeeNaija.com).mp3" type="audio/mpeg">
   </audio>
 
   <script>
 
-    const music = document.getElementById('music');
-    const btn = document.querySelector('.btn');
+    const music = document.getElementById('bgmusic');
+    const btn = document.querySelector('.playBtn');
+
+    btn .addEventListener("click", () => {
+        music.play();
+        btn .style.display = "none";
+    })
 
     function playMusic(){
 
