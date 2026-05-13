@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            <title>Happy Birthday Debby ❤️</title>
+
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      min-height:100vh;
+      font-family:'Poppins',sans-serif;
+      overflow:hidden;
+      position:relative;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:#000;
+    }
+
+    /* BACKGROUND */
+
+    .background{
+      position:absolute;
+      inset:0;
+      background:
+      linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.75)),
+      url('c:\Users\user\Downloads\debby.jpeg');
+      background-size:cover;
+      background-position:center;
+      animation: zoom 20s ease-in-out infinite alternate;
+    }
+
+    @keyframes zoom{
+      from{
+        transform:scale(1);
+      }
+
+      to{
+        transform:scale(1.08);
+      }
+    }
+
+    /* FLOATING HEARTS */
+
+    .hearts span{
+      position:absolute;
+      bottom:-100px;
+      color:gold;
+      font-size:25px;
+      animation:float 10s linear infinite;
+      opacity:.8;
+    }
+
+    .hearts span:nth-child(1){
+      left:10%;
+      animation-duration:8s;
+    }
+
+    .hearts span:nth-child(2){
+      left:25%;
+      animation-duration:12s;
+    }
+
+    .hearts span:nth-child(3){
+      left:50%;
+      animation-duration:9s;
+    }
+
+    .hearts span:nth-child(4){
+      left:70%;
+      animation-duration:11s;
+    }
+
+    .hearts span:nth-child(5){
+      left:90%;
+      animation-duration:13s;
+    }
+
+    @keyframes float{
+
+      0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+      }
+
+      20%{
+        opacity:1;
+      }
+
+      100%{
+        transform:translateY(-120vh) rotate(360deg);
+        opacity:0;
+      }
+
+    }
+
+    /* MAIN CARD */
+
+    .card{
+      position:relative;
+      z-index:2;
+      width:90%;
+      max-width:450px;
+      padding:40px 25px;
+      border-radius:30px;
+      text-align:center;
+      background:rgba(255,255,255,.08);
+      backdrop-filter:blur(12px);
+      border:1px solid rgba(255,255,255,.15);
+      box-shadow:0 0 40px rgba(255,215,0,.35);
+      color:white;
+    }
+
+    .small-title{
+      letter-spacing:5px;
+      margin-bottom:10px;
+      font-size:1rem;
+    }
+
+    h1{
+      font-family: 'Great Vibes',cursive;
+      font-size:5rem;
+      color:gold;
+      text-shadow: 0 0 25px rgba(255,215,0,.8);
+      margin-bottom: 20px;
+      animation:bounce 3s ease-in-out infinite;
+    }
+
+    @keyframes bounce{
+      0%,100%{
+        transform:translateY(0);
+      }
+
+      50%{
+        transform:translateY(-10px);
+      }
+    }
+
+    .message{
+      font-size:1rem;
+      line-height:1.8;
+      color:#f1f1f1;
+      margin-bottom:30px;
+    }
+
+    .btn{
+      border:none;
+      padding:15px 30px;
+      border-radius:50px;
+      background:gold;
+      color:black;
+      font-weight:700;
+      font-size:1rem;
+      cursor:pointer;
+      transition:.3s;
+    }
+
+    .btn:hover{
+      transform:scale(1.08);
+    }
+
+    .footer{
+      margin-top:25px;
+      opacity:.8;
+      font-size:.9rem;
+    }
+
+    @media(max-width:500px){
+
+      h1{
+        font-size:4rem;
+      }
+
+      .message{
+        font-size:.95rem;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="background"></div>
+
+  <!-- HEARTS -->
+
+  <div class="hearts">
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+  </div>
+
+  <!-- MAIN CONTENT -->
+
+  <div class="card">
+
+    <div class="small-title">
+      HAPPY BIRTHDAY
+    </div>
+
+    <h1>Debby</h1>
+
+    <div class="message">
+      Wishing you endless happiness, joy, peace,
+      laughter and beautiful memories today and forever ❤️✨
+    </div>
+
+    <button class="btn" onclick="playMusic()">
+      🎵 Play Music
+    </button>
+
+    <div class="footer">
+      Made with love 💛
+    </div>
+
+  </div>
+
+  <!-- MUSIC -->
+
+  <audio id="music" loop>
+    <source src="c:\Users\user\Downloads\JJ-Heller-Happy-Birthday-Song-(CeeNaija.com).mp3" type="audio/mp3">
+  </audio>
+
+  <script>
+
+    const music = document.getElementById('music');
+    const btn = document.querySelector('.btn');
+
+    function playMusic(){
+
+      if(music.paused){
+
+        music.play();
+        btn.innerHTML = "⏸ Pause Music";
+
+      }else{
+
+        music.pause();
+        btn.innerHTML = "🎵 Play Music";
+
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>
